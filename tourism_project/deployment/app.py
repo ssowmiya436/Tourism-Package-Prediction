@@ -93,8 +93,8 @@ if st.button("Predict Purchase Likelihood", type="primary"):
         st.write(f"The model predicts that this customer is **unlikely to purchase** the Wellness Tourism Package.")
         st.write(f"Confidence: **{prediction_proba[0]*100:.1f}%**")
 
-    # Display probability bar
-    st.progress(prediction_proba[1])
+    # Display probability bar (convert numpy float32 to Python float)
+    st.progress(float(prediction_proba[1]))
     st.caption(f"Purchase Probability: {prediction_proba[1]*100:.1f}%")
 
 st.markdown("---")
